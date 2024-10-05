@@ -6,10 +6,14 @@ import java.util.*;
 public class EmployeeManager {
     public static void main(String[] args) {
 
+    boolean isValidArg = true;
+
+    while(isValidArg){
 
         // Check arguments
 
         if (args[0].equals("l")) {
+            isValidArg = false ;
             System.out.println("Loading data ...");
             try {
                 BufferedReader r = new BufferedReader(
@@ -26,6 +30,7 @@ public class EmployeeManager {
         } 
 
         else if (args[0].equals("s")) {
+            isValidArg = false ;
             System.out.println("Loading data ...");
             try {
                 BufferedReader r = new BufferedReader(
@@ -43,6 +48,7 @@ public class EmployeeManager {
         } 
         
         else if (args[0].contains("+")) {
+            isValidArg = false ;
             System.out.println("Loading data ...");
             try {
                 BufferedWriter w = new BufferedWriter(
@@ -56,6 +62,7 @@ public class EmployeeManager {
         } 
         
         else if (args[0].contains("?")) {
+            isValidArg = false ;
             System.out.println("Loading data ...");
             try {
                 BufferedReader r = new BufferedReader(
@@ -77,6 +84,7 @@ public class EmployeeManager {
         } 
         
         else if (args[0].contains("c")) {
+            isValidArg = false ;
             System.out.println("Loading data ...");
             try {
                 BufferedReader r = new BufferedReader(
@@ -103,6 +111,7 @@ public class EmployeeManager {
         } 
         
         else if (args[0].contains("u")) {
+            isValidArg = false ;
             System.out.println("Loading data ...");
             try {
                 BufferedReader r = new BufferedReader(
@@ -126,6 +135,7 @@ public class EmployeeManager {
         } 
         
         else if (args[0].contains("d")) {
+            isValidArg = false ;
             System.out.println("Loading data ...");
             try {
                 BufferedReader r = new BufferedReader(
@@ -144,5 +154,14 @@ public class EmployeeManager {
             }
             System.out.println("Data Deleted.");
         }
+
+        else{
+            System.out.println("Wrong Argument ! Please Provide Valid Argument Like :: l, s, +, ?, c, u");
+            
+            Scanner input = new Scanner(System.in);
+            String getArgs = input.nextLine();
+            args = getArgs.split("//s+");
+        }
     }
+}
 }
