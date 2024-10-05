@@ -59,10 +59,9 @@ public class EmployeeManager {
                 System.out.println(constants.LOADING_DATA_MESSAGE);
 
                 String newReadLine = fileReader("employees.txt");
-                System.out.println(newReadLine);
                 String e[] = newReadLine.split(",");
-                Random rand = new Random();
-                int idx = rand.nextInt(e.length);
+                Random random = new Random();
+                int idx = random.nextInt(e.length);
                 System.out.println(e[idx]);
 
                 System.out.println(constants.DATA_LOADING_MESSAGE);
