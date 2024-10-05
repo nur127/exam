@@ -97,19 +97,8 @@ public class EmployeeManager {
 
                 String newReadLine = fileReader("employees.txt");
                 char[] chars = newReadLine.toCharArray();
-                boolean inWord = false;
-                int count = 0;
-                for (char c : chars) {
-                    if (c == ' ') {
-                        if (!inWord) {
-                            count++;
-                            inWord = true;
-                        } else {
-                            inWord = false;
-                        }
-                    }
-                }
-                System.out.println(count + constants.Word_fOUND_MESSAGE + chars.length);
+                String words[]=newReadLine.split((","));
+                System.out.println(words.length + constants.Word_fOUND_MESSAGE + chars.length);
                 System.out.println(constants.DATA_LOADING_MESSAGE);
             }
 
