@@ -97,19 +97,8 @@ public class EmployeeManager {
 
                 String newReadLine = fileReader("employees.txt");
                 char[] chars = newReadLine.toCharArray();
-                boolean inWord = false;
-                int count = 0;
-                for (char c : chars) {
-                    if (c == ' ') {
-                        if (!inWord) {
-                            count++;
-                            inWord = true;
-                        } else {
-                            inWord = false;
-                        }
-                    }
-                }
-                System.out.println(count + constants.Word_fOUND_MESSAGE + chars.length);
+                String words[]=newReadLine.split((","));
+                System.out.println(words.length + constants.Word_fOUND_MESSAGE + chars.length);
                 System.out.println(constants.DATA_LOADING_MESSAGE);
             }
 
@@ -122,7 +111,7 @@ public class EmployeeManager {
                     String name = args[0].substring(1);
                     for (int i = 0; i < e.length; i++) {
                         if (e[i].equals(name)) {
-                            e[i] = "Updated";
+                            e[i] = "Updated" ;
                         }
                     }
                     fileWriter("employee.txt", name);
@@ -149,7 +138,7 @@ public class EmployeeManager {
 
                 Scanner input = new Scanner(System.in);
                 String getArgs = input.nextLine();
-                args = getArgs.split("//s+");
+                args = getArgs.split("//s+") ;
             }
         }
     }
