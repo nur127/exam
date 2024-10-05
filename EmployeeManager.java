@@ -5,6 +5,7 @@ import java.util.*;
 
 public class EmployeeManager {
 
+    //add a common function for read a file
     public static String fileReader(String fileName) {
         String inputString;
         try {
@@ -19,6 +20,7 @@ public class EmployeeManager {
         return inputString;
     }
 
+    // add a common function for write into the file
     public static String fileWriter(String fileName, String name) {
         try {
             BufferedWriter writer = new BufferedWriter(
@@ -33,13 +35,15 @@ public class EmployeeManager {
 
     public static void main(String[] args) {
 
+        // declare constant object
         Constant constants = new Constant();
 
+        // set value invalid variable to check a arguments includes or not
         boolean isValidArg = true;
 
         while (isValidArg) {
 
-            // Check arguments
+            // arguments 1
 
             if (args[0].equals("l")) {
                 isValidArg = false;
@@ -53,7 +57,7 @@ public class EmployeeManager {
 
                 System.out.println(constants.DATA_LOADING_MESSAGE);
             }
-
+            // arguments 2
             else if (args[0].equals("s")) {
                 isValidArg = false;
                 System.out.println(constants.LOADING_DATA_MESSAGE);
@@ -66,7 +70,7 @@ public class EmployeeManager {
 
                 System.out.println(constants.DATA_LOADING_MESSAGE);
             }
-
+            // arguments 3
             else if (args[0].contains("+")) {
                 isValidArg = false;
                 System.out.println(constants.LOADING_DATA_MESSAGE);
@@ -74,7 +78,7 @@ public class EmployeeManager {
                 fileWriter("employee.txt", name);
                 System.out.println(constants.DATA_LOADING_MESSAGE);
             }
-
+            // arguments 4
             else if (args[0].contains("?")) {
                 isValidArg = false;
                 System.out.println(constants.LOADING_DATA_MESSAGE);
@@ -90,7 +94,7 @@ public class EmployeeManager {
                 }
                 System.out.println(constants.DATA_LOADING_MESSAGE);
             }
-
+            // arguments 5
             else if (args[0].contains("c")) {
                 isValidArg = false;
                 System.out.println(constants.LOADING_DATA_MESSAGE);
@@ -101,7 +105,7 @@ public class EmployeeManager {
                 System.out.println(words.length + constants.Word_fOUND_MESSAGE + chars.length);
                 System.out.println(constants.DATA_LOADING_MESSAGE);
             }
-
+            // arguments 6
             else if (args[0].contains("u")) {
                 isValidArg = false;
                 System.out.println(constants.LOADING_DATA_MESSAGE);
@@ -118,7 +122,7 @@ public class EmployeeManager {
                 
                 System.out.println(constants.DATA_UPDATED_MESSAGE);
             }
-
+            // argument 7
             else if (args[0].contains("d")) {
                 isValidArg = false;
                 System.out.println(constants.LOADING_DATA_MESSAGE);
@@ -132,7 +136,7 @@ public class EmployeeManager {
 
                 System.out.println(constants.DATA_DELETED_MESSAGE);
             }
-
+            // Give a wrong Argument Message for invalid argument
             else {
                 System.out.println(constants.WRONG_ARGUMENT_MESSAGE);
 
