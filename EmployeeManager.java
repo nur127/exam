@@ -111,7 +111,7 @@ public class EmployeeManager {
                     String name = args[0].substring(1);
                     for (int i = 0; i < e.length; i++) {
                         if (e[i].equals(name)) {
-                            e[i] = "Updated";
+                            e[i] = "Updated" ;
                         }
                     }
                     fileWriter("employee.txt", name);
@@ -138,7 +138,7 @@ public class EmployeeManager {
 
                 Scanner input = new Scanner(System.in);
                 String getArgs = input.nextLine();
-                args = getArgs.split("//s+");
+                args = getArgs.split("//s+") ;
             }
         }
     }
