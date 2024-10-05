@@ -33,6 +33,8 @@ public class EmployeeManager {
 
     public static void main(String[] args) {
 
+        Constant constants = new Constant();
+
         boolean isValidArg = true;
 
         while (isValidArg) {
@@ -41,7 +43,7 @@ public class EmployeeManager {
 
             if (args[0].equals("l")) {
                 isValidArg = false;
-                System.out.println("Loading data ...");
+                System.out.println(constants.LOADING_DATA_MESSAGE);
 
                 String newReadLine = fileReader("employees.txt");
                 String e[] = newReadLine.split(",");
@@ -49,12 +51,12 @@ public class EmployeeManager {
                     System.out.println(emp);
                 }
 
-                System.out.println("Data Loaded.");
+                System.out.println(constants.DATA_LOADING_MESSAGE);
             }
 
             else if (args[0].equals("s")) {
                 isValidArg = false;
-                System.out.println("Loading data ...");
+                System.out.println(constants.LOADING_DATA_MESSAGE);
 
                 String newReadLine = fileReader("employees.txt");
                 System.out.println(newReadLine);
@@ -63,20 +65,20 @@ public class EmployeeManager {
                 int idx = rand.nextInt(e.length);
                 System.out.println(e[idx]);
 
-                System.out.println("Data Loaded.");
+                System.out.println(constants.DATA_LOADING_MESSAGE);
             }
 
             else if (args[0].contains("+")) {
                 isValidArg = false;
-                System.out.println("Loading data ...");
+                System.out.println(constants.LOADING_DATA_MESSAGE);
                 String name = args[0].substring(1);
                 fileWriter("employee.txt", name);
-                System.out.println("Data Loaded.");
+                System.out.println(constants.DATA_LOADING_MESSAGE);
             }
 
             else if (args[0].contains("?")) {
                 isValidArg = false;
-                System.out.println("Loading data ...");
+                System.out.println(constants.LOADING_DATA_MESSAGE);
 
                 String newReadLine = fileReader("employees.txt");
                 String e[] = newReadLine.split(",");
@@ -84,16 +86,16 @@ public class EmployeeManager {
                 String name = args[0].substring(1);
                 for (int i = 0; i < e.length && !found; i++) {
                     if (e[i].equals(name)) {
-                        System.out.println("Employee found!");
+                        System.out.println(constants.EMPLOYEE_FOUND_MESSAGE);
                         found = true;
                     }
                 }
-                System.out.println("Data Loaded.");
+                System.out.println(constants.DATA_LOADING_MESSAGE);
             }
 
             else if (args[0].contains("c")) {
                 isValidArg = false;
-                System.out.println("Loading data ...");
+                System.out.println(constants.LOADING_DATA_MESSAGE);
 
                 String newReadLine = fileReader("employees.txt");
                 char[] chars = newReadLine.toCharArray();
@@ -109,13 +111,13 @@ public class EmployeeManager {
                         }
                     }
                 }
-                System.out.println(count + " word(s) found " + chars.length);
-                System.out.println("Data Loaded.");
+                System.out.println(count + constants.Word_fOUND_MESSAGE + chars.length);
+                System.out.println(constants.DATA_LOADING_MESSAGE);
             }
 
             else if (args[0].contains("u")) {
                 isValidArg = false;
-                System.out.println("Loading data ...");
+                System.out.println(constants.LOADING_DATA_MESSAGE);
                 
                     String newReadLine = fileReader("employees.txt");
                     String e[] = newReadLine.split(",");
@@ -127,12 +129,12 @@ public class EmployeeManager {
                     }
                     fileWriter("employee.txt", name);
                 
-                System.out.println("Data Updated.");
+                System.out.println(constants.DATA_UPDATED_MESSAGE);
             }
 
             else if (args[0].contains("d")) {
                 isValidArg = false;
-                System.out.println("Loading data ...");
+                System.out.println(constants.LOADING_DATA_MESSAGE);
 
                     String newReadLine = fileReader("employees.txt");
                     String e[] = newReadLine.split(",");
@@ -141,11 +143,11 @@ public class EmployeeManager {
                     list.remove(name);
                     fileWriter("employee.txt", name);
 
-                System.out.println("Data Deleted.");
+                System.out.println(constants.DATA_DELETED_MESSAGE);
             }
 
             else {
-                System.out.println("Wrong Argument ! Please Provide Valid Argument Like :: l, s, +, ?, c, u");
+                System.out.println(constants.WRONG_ARGUMENT_MESSAGE);
 
                 Scanner input = new Scanner(System.in);
                 String getArgs = input.nextLine();
