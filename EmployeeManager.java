@@ -81,12 +81,11 @@ public class EmployeeManager {
 
                 String newReadLine = fileReader("employees.txt");
                 String e[] = newReadLine.split(",");
-                boolean found = false;
+               
                 String name = args[0].substring(1);
-                for (int i = 0; i < e.length && !found; i++) {
-                    if (e[i].equals(name)) {
+                for(String i :e){
+                    if(name.equals(i)){
                         System.out.println(constants.EMPLOYEE_FOUND_MESSAGE);
-                        found = true;
                     }
                 }
                 System.out.println(constants.DATA_LOADING_MESSAGE);
